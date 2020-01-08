@@ -24,7 +24,7 @@ public class MainMenuController extends Controller implements Initializable {
 
     @Override
     public void initialize(final URL location, final ResourceBundle resources) {
-        Platform.runLater(()->MusicPlayer.INSTANCE.bindAudioButtonImage(soundButton));
+        Platform.runLater(()->MusicPlayer.INSTANCE.bindAudioButtonImage(soundButton, true));
     }
 
     @FXML

@@ -20,17 +20,21 @@ public enum  MusicPlayer {
     private Clip clip;
     private boolean isPlaying = true;
 
-    public void bindAudioButtonImage(Button button){
+    public void bindAudioButtonImage(Button button, boolean inMenu){
         button.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
                 if (isPlaying()) {
                     stop();
                     button.setGraphic(new ImageView(mute));
-                    button.setText(" Music off");
+                    if(inMenu) {
+                        button.setText(" Music off");
+                    }
                 }else {
                     play();
                     button.setGraphic(new ImageView(play));
-                    button.setText(" Music  on");
+                    if(inMenu) {
+                        button.setText(" Music  on");
+                    }
                 }
             }
         });

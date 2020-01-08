@@ -61,7 +61,7 @@ public class PlayController extends Controller implements Initializable, Observe
     @Override
     public void initialize(final URL location, final ResourceBundle resources) {
         ControllerManager.setPlayController(this);
-        MusicPlayer.INSTANCE.bindAudioButtonImage(soundButton);
+        MusicPlayer.INSTANCE.bindAudioButtonImage(soundButton, false);
         generateGrid(10, 20, bigPane);
         generateGrid(4, 3, smallPane);
         setGraphics();
