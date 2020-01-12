@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.canvas.Canvas?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Controlers.PlayController"
+          prefHeight="850.0" prefWidth="550.0"
+          vgap="10" hgap="10"
+          style="-fx-background-image: url('images/background.jpg'); -fx-background-position: bottom,center"
+          gridLinesVisible="false">
+    <Label text=" GRAN CANARIA TETRIS"
+           textFill="darkslategray"
+           wrapText="true"
+           textAlignment="CENTER"
+           GridPane.columnIndex="0"
+           GridPane.rowIndex="0"
+           alignment="CENTER"
+           GridPane.halignment="CENTER"
+           GridPane.valignment="BOTTOM"
+           GridPane.columnSpan="2"
+           minHeight="90"
+    minWidth="550">
+        <padding>
+            <Insets top="20"/>
+        </padding>
+        <font>
+            <Font size="50" name="AR CHRISTY"/>
+        </font>
+    </Label>
+    <Label  GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.rowSpan="9" minWidth="370" maxWidth="370">
+        <padding>
+            <Insets left="5"/>
+        </padding>
+        <graphic>
+            <ImageView>
+                <Image url="images/board.png" requestedHeight="750" preserveRatio="true" />
+            </ImageView>
+        </graphic>
+    </Label>
+    <GridPane fx:id="bigPane" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="10"  >
+        <padding>
+            <Insets top="50" left="55"/>
+        </padding>
+        <Canvas fx:id="canvasForBigPane" GridPane.columnIndex="0" GridPane.rowIndex="0" width="300" height="630" GridPane.columnSpan="10" GridPane.rowSpan="21" GridPane.halignment="LEFT" GridPane.valignment="TOP"/>
+    </GridPane>
+    <Label text="SCORE" maxWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="TOP_LEFT" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <padding>
+            <Insets left="25" top="50"/>
+        </padding>
+        <font>
+            <Font size="30" name="AR CHRISTY"/>
+        </font>
+    </Label>
+    <Label fx:id="scoreLabel" maxWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="TOP_LEFT" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <padding>
+            <Insets left="10" top="0"/>
+        </padding>
+        <font>
+            <Font size="40" name="AR CHRISTY"/>
+        </font>
+    </Label>
+    <Label text="NEXT" maxWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3" alignment="TOP_LEFT" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <padding>
+            <Insets left="25" top="0"/>
+        </padding>
+        <font>
+            <Font size="30" name="AR CHRISTY"/>
+        </font>
+    </Label>
+    <GridPane fx:id="smallPane" maxWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="TOP_LEFT" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <padding>
+            <Insets left="0" top="0"/>
+        </padding>
+        <Canvas fx:id="canvasForSmallPane" GridPane.columnIndex="0" GridPane.rowIndex="0" width="120" height="90" GridPane.halignment="LEFT" GridPane.valignment="TOP" GridPane.columnSpan="4" GridPane.rowSpan="4"/>
+    </GridPane>
+    <Label text="LEVEL 1" fx:id="levelLabel" maxWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="5" alignment="TOP_LEFT" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <padding>
+            <Insets left="20" top="10" bottom="22"/>
+        </padding>
+        <font>
+            <Font size="30" name="AR CHRISTY"/>
+        </font>
+    </Label>
+    <Label text="MUSIC" maxWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="6" alignment="TOP_LEFT" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <padding>
+            <Insets left="25" top="20"/>
+        </padding>
+        <font>
+            <Font size="30" name="AR CHRISTY"/>
+        </font>
+    </Label>
+    <Pane maxWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <Button layoutX="30" fx:id="soundButton" onAction="#onButtonClick" focusTraversable="false">
+            <graphic>
+                <ImageView>
+                    <Image url="images/audio.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+    </Pane>
+    <Label maxWidth="200" text="STOP" GridPane.columnIndex="1" GridPane.rowIndex="8" alignment="TOP_LEFT" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <padding>
+            <Insets left="35" top="0"/>
+        </padding>
+        <font>
+            <Font size="30" name="AR CHRISTY"/>
+        </font>
+    </Label>
+    <Pane maxWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="9" GridPane.valignment="TOP" GridPane.halignment="RIGHT">
+        <Button layoutX="30" layoutY="0" fx:id="stopButton" onAction="#onButtonClick" focusTraversable="false">
+            <graphic>
+                <ImageView>
+                    <Image url="images/stop.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+    </Pane>
+</GridPane>
